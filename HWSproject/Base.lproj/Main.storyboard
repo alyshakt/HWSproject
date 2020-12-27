@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i90-4A-5Rq">
-                                <rect key="frame" x="100" y="231.5" width="200" height="100"/>
+                                <rect key="frame" x="107" y="386" width="200" height="100"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" image="US">
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpV-cz-y4N">
-                                <rect key="frame" x="100" y="361.5" width="200" height="100"/>
+                                <rect key="frame" x="107" y="612" width="200" height="100"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" image="US">
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUr-Of-F32">
-                                <rect key="frame" x="100" y="101.5" width="200" height="100"/>
+                                <rect key="frame" x="107" y="171" width="200" height="100"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" image="US">
@@ -53,12 +53,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iUr-Of-F32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="4Yd-yG-pZQ"/>
-                            <constraint firstItem="i90-4A-5Rq" firstAttribute="leading" secondItem="LpV-cz-y4N" secondAttribute="leading" id="FIq-0Y-3Z3"/>
-                            <constraint firstItem="iUr-Of-F32" firstAttribute="leading" secondItem="i90-4A-5Rq" secondAttribute="leading" id="R1w-ti-bfQ"/>
-                            <constraint firstItem="LpV-cz-y4N" firstAttribute="top" secondItem="i90-4A-5Rq" secondAttribute="bottom" constant="30" id="Vi7-fr-kNA"/>
-                            <constraint firstItem="i90-4A-5Rq" firstAttribute="top" secondItem="iUr-Of-F32" secondAttribute="bottom" constant="30" id="e3D-Iw-VL5"/>
-                            <constraint firstItem="iUr-Of-F32" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13.5" id="qKJ-lv-hIl"/>
+                            <constraint firstItem="iUr-Of-F32" firstAttribute="leading" secondItem="i90-4A-5Rq" secondAttribute="leading" id="CVh-DU-EI2"/>
+                            <constraint firstItem="iUr-Of-F32" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pdw-Up-iFT"/>
+                            <constraint firstItem="i90-4A-5Rq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="386" id="cba-JF-ZkI"/>
+                            <constraint firstItem="iUr-Of-F32" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="d8d-Bf-heh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LpV-cz-y4N" secondAttribute="bottom" constant="150" id="sOS-qj-qdd"/>
+                            <constraint firstItem="i90-4A-5Rq" firstAttribute="leading" secondItem="LpV-cz-y4N" secondAttribute="leading" id="wJS-0s-E8Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2fo-qq-imK"/>

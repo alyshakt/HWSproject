@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         button2.layer.borderWidth = 3
         button3.layer.borderWidth = 3
         
-        button1.layer.borderColor = UIColor.systemBlue.cgColor
-        button2.layer.borderColor = UIColor.systemBlue.cgColor
-        button3.layer.borderColor = UIColor.systemBlue.cgColor
+        button1.layer.borderColor = UIColor.systemTeal.cgColor
+        button2.layer.borderColor = UIColor.systemTeal.cgColor
+        button3.layer.borderColor = UIColor.systemTeal.cgColor
         
         countries += ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
         askQuestion(action: nil)
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         correctAnswer = Int.random(in: 0...2)
-        title = "Find \(countries[correctAnswer].uppercased()). Current Score: \(score)"
+        title = "Find \(countries[correctAnswer]). Current Score: \(score)"
     }
     
     
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         var pointMessage : String
         
         if sender.tag == correctAnswer{
-            title = "You found the flag for \(countries[correctAnswer].uppercased())!"
+            title = "You found the flag for \(countries[correctAnswer])!"
             pointValue = 1
             pointMessage = "You earned \(String(pointValue)) point."
             score += pointValue
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     
     func checkMaxGuesses(){
         var titleToShow : String
-        let maxScore = 10
+        let maxScore = 5
         if totalGuesses == maxScore{
             if score == maxScore{
                 titleToShow = "WOW! You nailed it!"
