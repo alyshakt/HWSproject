@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var totalGuesses = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.systemBlue.cgColor
         
         countries += ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
-        
         askQuestion(action: nil)
     }
     
     func askQuestion(action: UIAlertAction!) {
+        checkMaxGuesses()
         //This needs to return an Alert to the user, so it needs an UIAlertAction input.
         countries.shuffle()
         //.normal is a struct / UIControlState
@@ -54,18 +55,36 @@ class ViewController: UIViewController {
             pointValue = 1
             pointMessage = "You earned \(String(pointValue)) point."
             score += pointValue
+            totalGuesses += 1
         }else{
             title = "Try again!"
             pointValue = 0
             pointMessage = "You did not earn any points."
             score -= pointValue
+            totalGuesses += 1
         }
-
         
         let ac = UIAlertController(title: title, message: pointMessage, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
         
+    }
+    
+    func checkMaxGuesses(){
+        var titleToShow : String
+        let maxScore = 10
+        if totalGuesses == maxScore{
+            if score == maxScore{
+                titleToShow = "WOW! You nailed it!"
+            }else{
+                titleToShow = "Game Over! Try Again?"
+            }
+        let acDone = UIAlertController(title: titleToShow, message: "You earned a total of \(String(score)) points.", preferredStyle: .alert)
+            acDone.addAction(UIAlertAction(title: "Restart", style: .destructive, handler: askQuestion))
+        present(acDone, animated: true)
+        totalGuesses = 0
+        score = 0
+        }
     }
     
     override func didReceiveMemoryWarning() {
