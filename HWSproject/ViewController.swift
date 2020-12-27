@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         correctAnswer = Int.random(in: 0...2)
-        title = countries[correctAnswer].uppercased()
+        title = "Find \(countries[correctAnswer].uppercased()). Current Score: \(score)"
     }
     
     
@@ -46,16 +46,23 @@ class ViewController: UIViewController {
         //@IBAction is similar to @IBOutlet, but goes the other way: @IBOutlet is a way of connecting code to storyboard layouts, and @IBAction is a way of making storyboard layouts trigger code.
         //This method takes one parameter, called sender. It's of type UIButton because we know that's what will be calling the method. And this is important: all three buttons are calling the same method, so it's important we know which button was tapped so we can judge whether the answer was correct.
         var title : String
+        var pointValue : Int
+        var pointMessage : String
         
         if sender.tag == correctAnswer{
-            title = "You did it!"
-            score += 1
+            title = "You found the flag for \(countries[correctAnswer].uppercased())!"
+            pointValue = 1
+            pointMessage = "You earned \(String(pointValue)) point."
+            score += pointValue
         }else{
             title = "Try again!"
-            score -= 0
+            pointValue = 0
+            pointMessage = "You did not earn any points."
+            score -= pointValue
         }
+
         
-        let ac = UIAlertController(title: title, message: "Your current score is \(score).", preferredStyle: .actionSheet)
+        let ac = UIAlertController(title: title, message: pointMessage, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
         
